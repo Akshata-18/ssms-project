@@ -1,268 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Book Depot | Official System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="ssms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="ssms.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-
-<header>
-    <div class="logo" onclick="show('home')">Om Book Depot</div>
-    <nav>
-        <a onclick="show('home')">Home</a>
-        <a onclick="show('shop')">Shop</a>
-        <a onclick="show('about')">About Us</a>
-        <a onclick="show('contact')">Contact Us</a>
-        <a onclick="show('adminLogin')" style="color:var(--primary)">Admin Panel</a>
-    </nav>
-    <div style="display:flex; align-items:center; gap:10px;">
-        <button class="btn-outline"
-        onclick="show('userAuth')"
-        style="padding:8px 15px;width:auto;">Login</button>
-        <span id="userGreeting" style="font-weight:700;"></span>
-        <button class="btn-outline"
-        onclick="show('cart')"
-        style="padding:10px 15px;border-radius:10px;width:auto;">
-        🛒 <span id="cartCount">0</span>
-        </button>
-    </div>
-</header>
-
-
-<main>
-    <section id="home" class="page active">
-        <div class="hero">
-           <div class="hero-left">
-           <h1>Quality Stationery <br>For Bright Futures</h1>
-           <p>Premium notebooks, writing tools, art supplies and office essentials 
-           for students, professionals and creators.</p>
-
-           <button class="btn hero-btn" onclick="show('shop')">Browse Products
-           </button>
-           </div>
-           <div class="hero-right">
-           <img src="home2.jpeg">
-           </div>
+    <header>
+        <div class="logo" onclick="show('home')">Om Book Depot</div>
+        <nav>
+            <a onclick="show('home')">Home</a>
+            <a onclick="show('shop')">Shop</a>
+            <a onclick="show('about')">About Us</a>
+            <a onclick="show('contact')">Contact Us</a>
+            <a onclick="show('adminLogin')" style="color:var(--primary)">Admin Panel</a>
+        </nav>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <button class="btn-outline" onclick="show('userAuth')" style="padding:8px 15px;width:auto;">Login</button>
+            <span id="userGreeting" style="font-weight:700;"></span>
+            <button class="btn-outline" onclick="show('cart')" style="padding:10px 15px;border-radius:10px;width:auto;">
+                🛒 <span id="cartCount">0</span>
+            </button>
         </div>
-        <div >
-           <h2 class="section-title"  >Category</h2>
-           <div id="categoryGrid" class="grid"></div>
-        </div>
-    </section>
+    </header>
 
-    <section id="shop" class="page">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px">
-            <h2>Our Catalog</h2>
-            <input type="text" id="shopSearch" placeholder="Search products..." onkeyup="renderShop()" style="max-width:300px; margin:0">
-        </div>
-        <div id="shopGrid" class="grid"></div>
-    </section>
-    
-    <section id="about" class="page">
-        <div id="about"  class="card" style="max-width:900px;margin:auto">
-            <h2>About Om Book Depot</h2>
-            <p>
-            Om Book Depot is a trusted stationery and book store serving students,
-            teachers, and offices . We provide a wide range of school
-            supplies, office materials, art products, and educational resources.
-            </p>
-            <p>
-            Our mission is to provide high-quality stationery at affordable prices
-            while ensuring excellent customer service.
-            </p>
-            <p>
-            This system is a digital management platform designed to simplify
-            inventory tracking, order management, and billing for the store.
-            </p>
-            <h3>Why Choose Us?</h3>
-            <p>📓 Wide variety of books and stationery</p>
-            <p>🖊 Quality office and school supplies</p>
-            <p>🎨 Art and craft materials</p>
-            <p>💰 Affordable pricing</p>
-            <p>⚡ Fast billing system</p>
-        </div>
-    </section>
 
-    <section id="contact" class="page">
-         <div class="card" style="max-width:800px;margin:auto">
-            <h2>Contact Us</h2>
-            <p style="margin-top:10px;color:#64748b"> We would love to hear from you.</p>
-            <div style="margin-top:20px">
-            <p><b>Store Name:</b> Om Book Depot</p>
-            <p><b>Phone:</b> +91 9975431431</p>
-            <p><b>Email:</b> ombookdepot@gmail.com</p>
-            <p><b>Address:</b> 160 South Sadar Bazar, Saat Rasta, Solapur 413001, Maharashtra, India</p>
+    <main>
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-left">
+                    <h1>Quality Stationery <br>For Bright Futures</h1>
+                    <p>Premium notebooks, writing tools, art supplies and office essentials
+                        for students, professionals and creators.</p>
+
+                    <button class="btn hero-btn" onclick="show('shop')">Browse Products
+                    </button>
+                </div>
+                <div class="hero-right">
+                    <img src="home2.jpeg">
+                </div>
             </div>
-            <hr style="margin:20px 0">
-        </div>
+            <div>
+                <h2 class="section-title">Category</h2>
+                <div id="categoryGrid" class="grid"></div>
+            </div>
+        </section>
 
-    </section>
+        <section id="shop" class="page">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px">
+                <h2>Our Catalog</h2>
+                <input type="text" id="shopSearch" placeholder="Search products..." onkeyup="renderShop()"
+                    style="max-width:300px; margin:0">
+            </div>
+            <div id="shopGrid" class="grid"></div>
+        </section>
 
-    <section id="userAuth" class="page">
-        <div class="auth-container">
-            <h2 id="authTitle">Register Account</h2>
-            <p id="authDesc" style="color:#64748b; margin-bottom:20px;">Join us to start shopping.</p>
-            <div id="regFields">
-                <input id="uName" placeholder="Full Name">
+        <section id="about" class="page">
+            <div id="about" class="card" style="max-width:900px;margin:auto">
+                <h2>About Om Book Depot</h2>
+                <p>
+                    Om Book Depot is a trusted stationery and book store serving students,
+                    teachers, and offices . We provide a wide range of school
+                    supplies, office materials, art products, and educational resources.
+                </p>
+                <p>
+                    Our mission is to provide high-quality stationery at affordable prices
+                    while ensuring excellent customer service.
+                </p>
+                <p>
+                    This system is a digital management platform designed to simplify
+                    inventory tracking, order management, and billing for the store.
+                </p>
+                <h3>Why Choose Us?</h3>
+                <p>📓 Wide variety of books and stationery</p>
+                <p>🖊 Quality office and school supplies</p>
+                <p>🎨 Art and craft materials</p>
+                <p>💰 Affordable pricing</p>
+                <p>⚡ Fast billing system</p>
             </div>
-            <input id="uEmail" type="email" placeholder="Email Address">
-            <input id="uPass" type="password" placeholder="Password">
-            <button class="btn btn-p" id="authBtn" onclick="handleUserAuth()">Create Account</button>
-            <div class="auth-toggle" onclick="toggleAuthMode()">
-                <p id="toggleText">Already have an account? <span>Login</span></p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="cart" class="page">
-       <div class="admin-layout" style="grid-template-columns: 1fr 400px;">
-            <div class="card">
-              <h3>Your Bag</h3>
-              <div id="cartItems" style="margin-top:20px;"></div>
+        <section id="contact" class="page">
+            <div class="card" style="max-width:800px;margin:auto">
+                <h2>Contact Us</h2>
+                <p style="margin-top:10px;color:#64748b"> We would love to hear from you.</p>
+                <div style="margin-top:20px">
+                    <p><b>Store Name:</b> Om Book Depot</p>
+                    <p><b>Phone:</b> +91 9975431431</p>
+                    <p><b>Email:</b> ombookdepot@gmail.com</p>
+                    <p><b>Address:</b> 160 South Sadar Bazar, Saat Rasta, Solapur 413001, Maharashtra, India</p>
+                </div>
+                <hr style="margin:20px 0">
             </div>
-            <div class="card">
-            <h3>Order Summary</h3>
-            <div style="margin:20px 0; font-weight:800; display:flex; justify-content:space-between; font-size:1.2rem;">
-                <span>Total:</span> <span id="cartTotal">₹0</span>
-            </div>
-            <input id="shipAddr" placeholder="Shipping Address">
-            <input id="shipMob" placeholder="Contact Number">
-            <button class="btn btn-p" onclick="processOrder()">Confirm Order (COD)</button>
-            </div>
-        </div>
-    </section>
-    
-    <section id="adminLogin" class="page">
-        <div class="auth-container">
-            <h2>Admin Security</h2>
-            <input id="admUser" placeholder="Admin ID">
-            <input id="admPass" type="password" placeholder="Passkey">
-            <button class="btn btn-p" onclick="handleAdminLogin()">Verify Identity</button>
-        </div>
-    </section>
 
-    <section id="adminDash" class="page">
-        <div class="admin-layout">
-            <aside class="sidebar">
-                <h3 style="margin-bottom:25px; font-size:0.8rem; opacity:0.6; letter-spacing:1px;">MANAGEMENT</h3>
-                <button class="side-btn active-tab" onclick="switchTab('inventory')">📦 Inventory</button>
-                <button class="side-btn" onclick="switchTab('orders')">🚚 Pending Orders</button>
-               <button class="side-btn" onclick="switchTab('sales')">💰 Sales History</button>
-                
-                <button class="btn btn-outline" style="color:white; border-color:#334155; margin-top:40px;" onclick="adminLogout()">Logout</button>
-            </aside>
-            <div class="card">
-                <div id="tabInventory">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <h3>Store Stock</h3>
-                        <button class="btn btn-p" style="width:auto;" onclick="toggleAddForm()">+ Add Item</button>
+        </section>
+
+        <section id="userAuth" class="page">
+            <div class="auth-container">
+                <h2 id="authTitle">Register Account</h2>
+                <p id="authDesc" style="color:#64748b; margin-bottom:20px;">Join us to start shopping.</p>
+                <div id="regFields">
+                    <input id="uName" placeholder="Full Name">
+                </div>
+                <input id="uEmail" type="email" placeholder="Email Address">
+                <input id="uPass" type="password" placeholder="Password">
+                <button class="btn btn-p" id="authBtn" onclick="handleUserAuth()">Create Account</button>
+                <div class="auth-toggle" onclick="toggleAuthMode()">
+                    <p id="toggleText">Already have an account? <span>Login</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="page">
+            <div class="admin-layout" style="grid-template-columns: 1fr 400px;">
+                <div class="card">
+                    <h3>Your Bag</h3>
+                    <div id="cartItems" style="margin-top:20px;"></div>
+                </div>
+                <div class="card">
+                    <h3>Order Summary</h3>
+                    <div
+                        style="margin:20px 0; font-weight:800; display:flex; justify-content:space-between; font-size:1.2rem;">
+                        <span>Total:</span> <span id="cartTotal">₹0</span>
                     </div>
-                    <div id="addForm" style="display:none; margin-top:20px; background:#f8fafc; padding:20px; border-radius:15px;">
-                        <input id="niName" placeholder="Product Name">
-                        <input id="niCat" placeholder="Category">
-                        <input id="niPrice" type="number" placeholder="Price">
-                        <input id="niStock" type="number" placeholder="Stock Qty">
-                        <input id="niImg" placeholder="Image URL">
-                        <button class="btn btn-p" onclick="saveNewProduct()">Save to System</button>
+                    <input id="shipAddr" placeholder="Shipping Address">
+                    <input id="shipMob" placeholder="Contact Number">
+                    <button class="btn btn-p" onclick="processOrder()">Confirm Order (COD)</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="adminLogin" class="page">
+            <div class="auth-container">
+                <h2>Admin Security</h2>
+                <input id="admUser" placeholder="Admin ID">
+                <input id="admPass" type="password" placeholder="Passkey">
+                <button class="btn btn-p" onclick="handleAdminLogin()">Verify Identity</button>
+            </div>
+        </section>
+
+        <section id="adminDash" class="page">
+            <div class="admin-layout">
+                <aside class="sidebar">
+                    <h3 style="margin-bottom:25px; font-size:0.8rem; opacity:0.6; letter-spacing:1px;">MANAGEMENT</h3>
+                    <button class="side-btn active-tab" onclick="switchTab('inventory')">📦 Inventory</button>
+                    <button class="side-btn" onclick="switchTab('orders')">🚚 Pending Orders</button>
+                    <button class="side-btn" onclick="switchTab('sales')">💰 Sales History</button>
+
+                    <button class="btn btn-outline" style="color:white; border-color:#334155; margin-top:40px;"
+                        onclick="adminLogout()">Logout</button>
+                </aside>
+                <div class="card">
+                    <div id="tabInventory">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <h3>Store Stock</h3>
+                            <button class="btn btn-p" style="width:auto;" onclick="toggleAddForm()">+ Add Item</button>
+                        </div>
+                        <div id="addForm"
+                            style="display:none; margin-top:20px; background:#f8fafc; padding:20px; border-radius:15px;">
+                            <input id="niName" placeholder="Product Name">
+                            <input id="niCat" placeholder="Category">
+                            <input id="niPrice" type="number" placeholder="Price">
+                            <input id="niStock" type="number" placeholder="Stock Qty">
+                            <input id="niImg" placeholder="Image URL">
+                            <button class="btn btn-p" onclick="saveNewProduct()">Save to System</button>
+                        </div>
+                        <div id="inventoryTable" style="margin-top:20px;"></div>
                     </div>
-                    <div id="inventoryTable" style="margin-top:20px;"></div>
+                    <div id="tabOrders" style="display:none;">
+                        <h3>New Customer Orders</h3>
+                        <div id="orderList" style="margin-top:20px;"></div>
+                    </div>
+                    <div id="tabSales" style="display:none;">
+                        <h3>Revenue Insights</h3>
+                        <div id="salesReport"></div>
+                    </div>
                 </div>
-                <div id="tabOrders" style="display:none;">
-                    <h3>New Customer Orders</h3>
-                    <div id="orderList" style="margin-top:20px;"></div>
-                </div>
-                <div id="tabSales" style="display:none;">
-                    <h3>Revenue Insights</h3>
-                    <div id="salesReport"></div>
+            </div>
+        </section>
+
+        <div id="productModal"
+            style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center; padding:20px;">
+            <div class="card"
+                style="max-width:800px; width:100%; display:grid; grid-template-columns: 1fr 1fr; gap:30px; position:relative;">
+                <span onclick="closeModal()"
+                    style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:1.5rem; font-weight:bold;">&times;</span>
+                <img id="modalImg" src="" style="width:100%; border-radius:15px;">
+                <div>
+                    <h2 id="modalName"></h2>
+                    <p id="modalCat" style="color:var(--primary); margin:10px 0;"></p>
+                    <p id="modalDesc" style="color:#64748b; line-height:1.6; margin-bottom:20px;">
+                        Experience the premium quality of our curated collection. Perfect for students and professionals
+                        alike.
+                    </p>
+                    <h3 id="modalPrice" style="font-size:1.8rem; margin-bottom:20px;"></h3>
+                    <button id="modalAddBtn" class="btn btn-p">Add to Bag</button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <div id="productModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center; padding:20px;">
-    <div class="card" style="max-width:800px; width:100%; display:grid; grid-template-columns: 1fr 1fr; gap:30px; position:relative;">
-        <span onclick="closeModal()" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:1.5rem; font-weight:bold;">&times;</span>
-        <img id="modalImg" src="" style="width:100%; border-radius:15px;">
-        <div>
-            <h2 id="modalName"></h2>
-            <p id="modalCat" style="color:var(--primary); margin:10px 0;"></p>
-            <p id="modalDesc" style="color:#64748b; line-height:1.6; margin-bottom:20px;">
-                Experience the premium quality of our curated collection. Perfect for students and professionals alike.
-            </p>
-            <h3 id="modalPrice" style="font-size:1.8rem; margin-bottom:20px;"></h3>
-            <button id="modalAddBtn" class="btn btn-p">Add to Bag</button>
-        </div>
-    </div>
-    </div>
-
-    <section id="billPage" class="page">
-        <div class="card">
-           <div id="billPrintArea">
-            <h2 style="text-align:center">OM BOOK DEPOT</h2>
-            <div id="billHeader"></div>
-            <table style="width:100%;border-collapse:collapse;margin-top:15px">
-              <thead>
-              <tr style="background:#f1f5f9">
-              <th style="padding:8px;border:1px solid #ddd">Item</th>
-              <th style="border:1px solid #ddd">Qty</th>
-              <th style="border:1px solid #ddd">Rate</th>
-              <th style="border:1px solid #ddd">Amount</th>
-              </tr>
-              </thead>
-              <tbody id="billItemsBody"></tbody>
-            </table>
-            <h3 id="billTotal" style="text-align:right"></h3>
+        <section id="billPage" class="page">
+            <div class="card">
+                <div id="billPrintArea">
+                    <h2 style="text-align:center">OM BOOK DEPOT</h2>
+                    <div id="billHeader"></div>
+                    <table style="width:100%;border-collapse:collapse;margin-top:15px">
+                        <thead>
+                            <tr style="background:#f1f5f9">
+                                <th style="padding:8px;border:1px solid #ddd">Item</th>
+                                <th style="border:1px solid #ddd">Qty</th>
+                                <th style="border:1px solid #ddd">Rate</th>
+                                <th style="border:1px solid #ddd">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="billItemsBody"></tbody>
+                    </table>
+                    <h3 id="billTotal" style="text-align:right"></h3>
+                </div>
+                <button class="btn btn-p" onclick="window.print()">Print Bill</button>
+                <button class="btn btn-p" onclick="finalizeSale()">Confirm Payment</button>
+                <button class="btn" onclick="show('adminDash')">Back</button>
             </div>
-            <button class="btn btn-p" onclick="window.print()">Print Bill</button>
-            <button class="btn btn-p" onclick="finalizeSale()">Confirm Payment</button>
-            <button class="btn" onclick="show('adminDash')">Back</button>
+        </section>
+    </main>
+
+    <footer>
+        <div
+            style="max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;text-align:left;">
+            <div>
+                <h3>Om Book Depot</h3>
+                <p>Your trusted partner in education and stationery</p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <p><a onclick="show('home')" style="cursor:pointer;color:#cbd5f5;">Home</a></p>
+                <p><a onclick="show('shop')" style="cursor:pointer;color:#cbd5f5;">Shop</a></p>
+                <p><a onclick="show('about')" style="cursor:pointer;color:#cbd5f5;">About</a></p>
+                <p><a onclick="show('contact')" style="cursor:pointer;color:#cbd5f5;">Contact</a></p>
+            </div>
+
+            <div>
+                <h4>Contact Info</h4>
+                <p>📍 160 South Sadar Bazar, Saat Rasta, Solapu1 413001</p>
+                <p>📞 +91 9975431431</p>
+                <p>✉ ombookdepot@gmail.com</p>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="https://www.facebook.com/100064088851134/" target="_blank" class="social-icon"
+                        title="Facebook">Facebook</a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram">Instagram</a>
+                    <a href="https://whatsapp.com" target="_blank" class="social-icon" title="WhatsApp">WhatsApp</a>
+                </div>
+            </div>
+
         </div>
-    </section>
-</main>
 
-<footer>
-    <div style="max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;text-align:left;">
-        <div>
-            <h3>Om Book Depot</h3>
-            <p>Your trusted partner in education and stationery</p>
+        <div style="margin-top:30px;border-top:1px solid #334155;padding-top:20px;">
+            <p>© 2026 Om Book Depot | Retail Management System | Student Project</p>
         </div>
 
-        <div>
-            <h4>Quick Links</h4>
-            <p><a onclick="show('home')" style="cursor:pointer;color:#cbd5f5;">Home</a></p>
-            <p><a onclick="show('shop')" style="cursor:pointer;color:#cbd5f5;">Shop</a></p>
-            <p><a onclick="show('about')" style="cursor:pointer;color:#cbd5f5;">About</a></p>
-            <p><a onclick="show('contact')" style="cursor:pointer;color:#cbd5f5;">Contact</a></p>
-        </div>
+    </footer>
 
-        <div>
-            <h4>Contact Info</h4>
-            <p>📍 160 South Sadar Bazar, Saat Rasta, Solapu1 413001</p>
-            <p>📞 +91 9975431431</p>
-            <p>✉ ombookdepot@gmail.com</p>
-        </div>
-
-        <div>
-    <h4>Follow Us</h4>
-    <div style="display: flex; gap: 15px; margin-top: 10px;">
-        <a href="https://www.facebook.com/100064088851134/" target="_blank" class="social-icon" title="Facebook">Facebook</a>
-        <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram">Instagram</a>
-        <a href="https://whatsapp.com" target="_blank" class="social-icon" title="WhatsApp">WhatsApp</a>
-    </div>
-</div>
-
-    </div>
-
-    <div style="margin-top:30px;border-top:1px solid #334155;padding-top:20px;">
-        <p>© 2026 Om Book Depot | Retail Management System | Student Project</p>
-    </div>
-
-</footer>
-
-<script src="ssms.js"></script>
+    <script src="ssms.js"></script>
 </body>
+
 </html>
